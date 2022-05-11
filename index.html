@@ -5,18 +5,22 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" href="images/logo.png" />
 		<title>RUTES</title>
 	</head>
 	<body>
 		<header>
-			<a href="index.html">
+			<a class="logo" href="#">
+				<img src="images/logo.png" />
 				<h3>RUTES</h3>
 			</a>
-			<nav>
+			<nav id="nav" class="hide">
 				<a href="https://rutes-admin.netlify.app/">Admin Dashboard</a>
 				<a href="https://kingsleykbc.github.io/rutes-page/sample/">Test Site</a>
-				<a href="">Presentation</a>
+				<a class="button" href="">Presentation</a>
 			</nav>
+
+			<div id="hamburger"><img src="images/icon_menu.png" /></div>
 		</header>
 
 		<!-- JUMBOTRON -->
@@ -30,7 +34,7 @@
 					The remote user evaluation and usability testing suite (RUTES) project is a system that allows web developers to create, monitor,
 					and view results of user tests on their applications.
 				</p>
-				<a href="#getStarted" class="button"> Get Started</a>
+				<a href="#gettingStarted" class="button filled"> Get Started</a>
 			</div>
 		</div>
 
@@ -51,20 +55,98 @@
 		</div>
 
 		<!-- GETTING STARTED -->
-		<div ud="gettingStarted" class="gettingStarted">
-			<h1>GETTING STARTED</h1>
+		<div id="gettingStarted" class="gettingStarted">
+			<h2>GETTING STARTED</h2>
 			<ul>
-				<ol>
-					<div class="icon"></div>
-					<div class="details">
-						<h3>1. Instructions about one</h3>
-						<p>Instructions about two</p>
+				<!-- STEP 1 -->
+				<li>
+					<div class="icon">
+						<img src="images/icon_add.png" alt="icon" />
 					</div>
-				</ol>
+					<div class="details">
+						<h3>1. Create Project and tests on the <a href="https://rutes-admin.netlify.app/" target="_blank">Admin Dashboard</a></h3>
+						<p>
+							Sign up on the Rutes Admin app and create a new project. In the add form, specify the different test instructions,
+							questionnaires, etc. and enter the emails of your approved testers. (NOTE: For exploration only, login with the default
+							credentials by clicking the "Pre-fill test credentials button").
+						</p>
+					</div>
+				</li>
+
+				<!-- STEP 2 -->
+				<li>
+					<div class="icon">
+						<img src="images/icon_import.png" alt="icon" />
+					</div>
+					<div class="details">
+						<h3>2. Import tester library into web project</h3>
+						<p>
+							Instructions for this are provided in the details section of the project on the dashboard with the 'embed code' snippets and
+							the library's download link (NOTE: For exploration, visit the
+							<a href="https://kingsleykbc.github.io/rutes-page/sample/">test website</a> which has the library setup for the "Library test"
+							project defined in the default credentials account in step 1 above ).
+						</p>
+					</div>
+				</li>
+
+				<!-- STEP 3 -->
+				<li>
+					<div class="icon">
+						<img src="images/icon_result.png" alt="icon" />
+					</div>
+					<div class="details">
+						<h3>3. Interact with testers and results</h3>
+						<p>
+							Observe results from participants (UI annotations, test completions, questionnaire responses, etc.) and chat with participants
+							during sessions. (NOTE: For exploration, view the results of the "Library test" project under the default credentials account.
+							Also note that screen recording may be removed in the future due to cost.).
+						</p>
+					</div>
+				</li>
 			</ul>
 		</div>
 
 		<!-- FOOTER -->
-		<footer>Kingsley Chubie Anyabuike</footer>
+		<footer>
+			<div class="author">Kingsley Chubie Anyabuike &copy;2022</div>
+
+			<!-- LINKS -->
+			<div class="bottomList">
+				<div class="bottomItem">
+					<span>Git Repos</span>
+					<ul>
+						<li><a href="https://github.com/kingsleykbc/rutes-admin">Admin dashboard</a></li>
+						<li><a href="https://github.com/kingsleykbc/rutes-tester-library">Tester library</a></li>
+						<li><a href="https://github.com/kingsleykbc/rutes-server">Server</a></li>
+						<li><a href="https://github.com/kingsleykbc/rutes-page">Landing page</a></li>
+					</ul>
+				</div>
+
+				<div class="bottomItem">
+					<span>Resources</span>
+					<ul>
+						<li><a href="">Project presentation</a></li>
+						<li><a href="">Tester library (current version)</a></li>
+					</ul>
+				</div>
+
+				<div class="bottomItem">
+					<span>Live project</span>
+					<ul>
+						<li><a href="https://rutes-admin.netlify.app/">Admin dashboard (use test credentials)</a></li>
+						<li><a href="https://kingsleykbc.github.io/rutes-page/sample/">Test site with library imported and setup</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<!-- ADD PRESENTATION VIDEO WITH PPT DOWNLOAD BUTTON -->
+
+		<script>
+			document.querySelector('#hamburger').addEventListener('click', () => {
+				const nav = document.querySelector('#nav');
+				nav.className = nav.className === 'hide' ? 'show' : 'hide';
+			});
+		</script>
 	</body>
 </html>
